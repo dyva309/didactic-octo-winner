@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Surprise For You! ❤️</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fbeef1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    img {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: #b83253;
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+    .btn-container {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .btn-yes {
+      background-color: #72cf9b;
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .btn-no {
+      background-color: #f15b6c;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cute Cat GIF -->
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp1ZHZ1dmJzeWNwZjR5Zmg1OWcwcWN3MjhreDZidGJqNzRydm02ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute GIF">
+
+  <h1 id="question">Wait... are you sure? 🥺</h1>
+
+  <div class="btn-container">
+    <button class="btn-yes" onclick="nextPage()">YES</button>
+    <button class="btn-no" id="noBtn" onclick="shrinkNo()">NO</button>
+  </div>
+
+  <script>
+    let yesSize = 22;
+    function shrinkNo() {
+      yesSize += 10;
+      document.querySelector('.btn-yes').style.fontSize = yesSize + 'px';
+      document.querySelector('.btn-yes').style.padding = (yesSize / 1.5) + 'px ' + (yesSize * 1.5) + 'px';
+    }
+
+    function nextPage() {
+      document.body.innerHTML = `
+        <h1 style="color: #b83253; font-size: 32px;">Happy Birthday! 🎉❤️</h1>
+        <p style="font-size: 20px; color: #555;">Insert your custom message or video here!</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
